@@ -85,12 +85,12 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!60 &60337029671250080
 PolygonCollider2D:
@@ -100,7 +100,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 1339539506138172}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 81f93a03dae6799449b5a51a7b7f9d12, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b57ffadff3c540542a36f0ce697341b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprite: {fileID: 212539918930482292}
   rigidBody: {fileID: 50480904158093990}
 --- !u!212 &212539918930482292
 SpriteRenderer:
