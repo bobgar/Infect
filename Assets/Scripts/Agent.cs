@@ -131,7 +131,6 @@ public class Agent : MonoBehaviour {
 
     private void OnDestroy()
     {
-        Debug.Log("DESTROYED");
         GoalManager.instance.objectCount--;
         if (disease != null && GoalManager.instance.colorCountDictionary.ContainsKey(disease.color))
         {

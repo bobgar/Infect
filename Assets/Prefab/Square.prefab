@@ -20,8 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4200902961484350}
   - component: {fileID: 50480904158093990}
-  - component: {fileID: 60337029671250080}
   - component: {fileID: 114104107927714676}
+  - component: {fileID: 60668530419882530}
   m_Layer: 0
   m_Name: Square
   m_TagString: Agent
@@ -53,7 +53,7 @@ Transform:
   m_GameObject: {fileID: 1339539506138172}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.02, y: 3.31, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4702467526971208}
   m_Father: {fileID: 0}
@@ -92,7 +92,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &60337029671250080
+--- !u!60 &60668530419882530
 PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -100,26 +100,27 @@ PolygonCollider2D:
   m_GameObject: {fileID: 1339539506138172}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 81f93a03dae6799449b5a51a7b7f9d12, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 8.89}
-    newSize: {x: 0.2, y: 0.2}
-    adaptiveTilingThreshold: 0.5
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -1.2, y: 1.2}
-      - {x: 1.2, y: 1.2}
-      - {x: 1.2, y: -1.2}
-      - {x: -1.2, y: -1.2}
+    - - {x: 1.0483774, y: -1.0421214}
+      - {x: 1.0528538, y: 1.0411263}
+      - {x: -1.0497624, y: 1.0410795}
+      - {x: -1.0401835, y: -1.047554}
+      - {x: 1.0484087, y: -1.047555}
 --- !u!114 &114104107927714676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -169,7 +170,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9fb9a7d8d97c8c0479b9aee2a963aea3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 08d17ebee96e8e6468e2882f27df56f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
