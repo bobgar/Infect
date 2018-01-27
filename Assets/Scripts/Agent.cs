@@ -110,7 +110,10 @@ public class Agent : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if(_deathTime >= 0)
+        if (GoalManager.instance.won)
+            return;
+
+        if (_deathTime >= 0)
         {
             var percent = (Time.time-_startDeathTimer) / _deathTime;
             if(percent > 1)

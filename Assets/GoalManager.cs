@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GoalManager : MonoBehaviour {
+    public bool won;
 
     public Goal[] goals;
 
@@ -10,6 +11,8 @@ public class GoalManager : MonoBehaviour {
 
     public int objectCount;
     public Dictionary<Color, int> colorCountDictionary = new Dictionary<Color, int>();
+
+    public GameObject winUI;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +24,8 @@ public class GoalManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (won)
+            return;
 
         int goalsComplete = 0;
         for(int i = 0; i < goals.Length; i++)
@@ -40,5 +45,15 @@ public class GoalManager : MonoBehaviour {
     void Win()
     {
         Debug.Log("*********** WIN **************");
+        won = true;        
+        winUI.SetActive(true);
+
+        Rigidbody2D[] rigidBodyArray = FindObjectsOfType<Rigidbody2D>();
+        for(int i = 0; i < rigidBodyArray.Length; i++)
+        {
+            rigidBodyArray[i].isKinematic = true;
+            rigidBodyArray[i].velocity = Vector3.zero;
+            rigidBodyArray[i].angularVelocity = 0;
+        }
     }
 }
