@@ -327,6 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   won: 0
+  goalContainer: {fileID: 1420312444}
   goals:
   - {fileID: 1532939149}
   objectCount: 0
@@ -591,6 +592,11 @@ Prefab:
 --- !u!1 &1412335080 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1955970318990288, guid: e365d132fc4a24e4aab0c8a6e178489e,
+    type: 2}
+  m_PrefabInternal: {fileID: 856506918}
+--- !u!224 &1420312444 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224407224546701898, guid: e365d132fc4a24e4aab0c8a6e178489e,
     type: 2}
   m_PrefabInternal: {fileID: 856506918}
 --- !u!1 &1470816972

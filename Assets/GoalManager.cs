@@ -5,6 +5,7 @@ using UnityEngine;
 public class GoalManager : MonoBehaviour {
     public bool won;
 
+    public Transform goalContainer;
     public Goal[] goals;
 
     public static GoalManager instance;
@@ -20,6 +21,12 @@ public class GoalManager : MonoBehaviour {
 
         Agent[] initialAgentArray = FindObjectsOfType<Agent>();
         GoalManager.instance.objectCount = initialAgentArray.Length;
+
+        for (int i = 0; i < goals.Length; i++)
+        {
+            Debug.Log("Ading UI for Goal");
+            goals[i].AddUI(goalContainer, i * 50);
+        }
 	}
 	
 	// Update is called once per frame
