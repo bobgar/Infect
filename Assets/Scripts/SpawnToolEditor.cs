@@ -12,25 +12,41 @@ class SpawnToolEditor : Editor
         Event e = Event.current;
         if (m_editMode)
         {
-            if (e.type == EventType.KeyUp && e.keyCode == KeyCode.Space)
+            if (e.type == EventType.KeyUp && e.keyCode == KeyCode.Z)
             {
-                // if()
-                // Ray worldRay = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
-                // RaycastHit hitInfo;
- 
-               
-                // if (Physics.Raycast(worldRay, out hitInfo))
-                // {
-                    GameObject circle = AssetDatabase.LoadAssetAtPath("Assets/Prefab/Circle.prefab", typeof(GameObject)) as GameObject;
-                    GameObject circleInstance = Instantiate(circle) as GameObject;
-                    Vector2 mousePos = Event.current.mousePosition;
-                    mousePos.y = Camera.current.pixelHeight - mousePos.y;
-                    // mousePos.x = Camera.current.pixelWidth - mousePos.x;
-                    Vector3 position = Camera.current.ScreenPointToRay(mousePos).origin;
-                    position = new Vector3(position.x, position.y, 0);
-                    circleInstance.transform.position = position;
-                    // Undo.RecordObject(circleInstance);
-                // }
+                GameObject circle = AssetDatabase.LoadAssetAtPath("Assets/Prefab/Circle.prefab", typeof(GameObject)) as GameObject;
+                GameObject circleInstance = PrefabUtility.InstantiatePrefab(circle) as GameObject;
+                Vector2 mousePos = Event.current.mousePosition;
+                mousePos.y = Camera.current.pixelHeight - mousePos.y;
+                // mousePos.x = Camera.current.pixelWidth - mousePos.x;
+                Vector3 position = Camera.current.ScreenPointToRay(mousePos).origin;
+                position = new Vector3(position.x, position.y, 0);
+                circleInstance.transform.position = position;
+                Undo.RegisterCreatedObjectUndo(circleInstance, "Undo create circle");
+            }
+            if (e.type == EventType.KeyUp && e.keyCode == KeyCode.X)
+            {
+                GameObject triangle = AssetDatabase.LoadAssetAtPath("Assets/Prefab/Triangle.prefab", typeof(GameObject)) as GameObject;
+                GameObject triangleInstance = PrefabUtility.InstantiatePrefab(triangle) as GameObject;
+                Vector2 mousePos = Event.current.mousePosition;
+                mousePos.y = Camera.current.pixelHeight - mousePos.y;
+                // mousePos.x = Camera.current.pixelWidth - mousePos.x;
+                Vector3 position = Camera.current.ScreenPointToRay(mousePos).origin;
+                position = new Vector3(position.x, position.y, 0);
+                triangleInstance.transform.position = position;
+                Undo.RegisterCreatedObjectUndo(triangleInstance, "Undo create triangle");
+            }
+            if (e.type == EventType.KeyUp && e.keyCode == KeyCode.C)
+            {
+                GameObject square = AssetDatabase.LoadAssetAtPath("Assets/Prefab/Square.prefab", typeof(GameObject)) as GameObject;
+                GameObject squareInstance = PrefabUtility.InstantiatePrefab(square) as GameObject;
+                Vector2 mousePos = Event.current.mousePosition;
+                mousePos.y = Camera.current.pixelHeight - mousePos.y;
+                // mousePos.x = Camera.current.pixelWidth - mousePos.x;
+                Vector3 position = Camera.current.ScreenPointToRay(mousePos).origin;
+                position = new Vector3(position.x, position.y, 0);
+                squareInstance.transform.position = position;
+                Undo.RegisterCreatedObjectUndo(squareInstance, "Undo create square");
             }
  
         }
@@ -38,6 +54,11 @@ class SpawnToolEditor : Editor
     }
     public override void OnInspectorGUI()
     {
+        GUILayout.Label ("Enable Editing below then");
+        GUILayout.Label ("Press z to instantiate circle");
+        GUILayout.Label ("Press x to instantiate triangle");
+        GUILayout.Label ("Press c to instantiate square");
+
         if (m_editMode)
         {
             if (GUILayout.Button("Disable Editing"))
