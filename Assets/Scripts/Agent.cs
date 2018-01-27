@@ -6,6 +6,9 @@ public class Agent : MonoBehaviour {
     public SpriteRenderer sprite;
     public Rigidbody2D rigidBody;
 
+    public GameObject splitAgent;
+    public int splitNum;
+
     private bool _infected = false;
 
 	// Use this for initialization
@@ -20,25 +23,54 @@ public class Agent : MonoBehaviour {
 		    
 	}
 
-    void OncollisionEnter2D(Collision2D coll)
+    void OnCollisionEnter2D(Collision2D coll)
     {
+        Debug.Log("collision!");
         if (IsInfected())
         {
-            Collider2D c = coll.otherCollider;
-            Agent a = c.gameObject.GetComponent<Agent>();
-            if (!a.IsInfected())
+            //Collider2D c = coll.otherCollider;
+            Agent a = coll.gameObject.GetComponent<Agent>();
+
+            Debug.Log("object " + coll.gameObject.name);
+            if (a && !a.IsInfected())
             {
-                Infect();
+                Debug.Log("Infecting!");
+                a.Infect();
+                a.Split();
+                Split();
+
+                GameObject.Destroy(this.gameObject);
             }
         }
     }
 
-    bool IsInfected()
+    public bool IsInfected()
     {
         return _infected;
     }
 
-    void Infect()
+    public void Split()
+    {
+        Debug.Log("splitAgent: " + splitAgent);
+        if (splitAgent != null)
+        {
+            Debug.Log("splitNum: " + splitNum);
+            for (int i = 0; i < splitNum; i++)
+            {
+                Debug.Log("dividing!");
+                GameObject splitObj = GameObject.Instantiate(splitAgent);
+                splitObj.gameObject.transform.position = this.gameObject.transform.position + Random.onUnitSphere;
+                Agent a = splitObj.GetComponent<Agent>();
+                if(a && this.IsInfected())
+                {
+                    a.Infect();
+                }
+            }
+        }
+        GameObject.Destroy(this.gameObject);
+    }
+
+    public void Infect()
     {
         _infected = true;
         sprite.color = Color.red;

@@ -133,6 +133,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 212539918930482292}
   rigidBody: {fileID: 50480904158093990}
+  splitAgent: {fileID: 1288194747182986, guid: 70bf045be3680ec4097c8829c02ff7fb, type: 2}
+  splitNum: 3
 --- !u!212 &212539918930482292
 SpriteRenderer:
   m_ObjectHideFlags: 1
