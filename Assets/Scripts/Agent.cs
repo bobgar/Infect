@@ -54,6 +54,7 @@ public class Agent : MonoBehaviour {
             {
                 //Debug.Log("dividing!");
                 GameObject splitObj = GameObject.Instantiate(splitAgent);
+                GoalManager.instance.objectCount++;
                 splitObj.gameObject.transform.position = this.gameObject.transform.position + Random.onUnitSphere;
                 Agent a = splitObj.GetComponent<Agent>();
                 if(a && this.IsInfected())
@@ -69,6 +70,14 @@ public class Agent : MonoBehaviour {
     {
         //_infected = true;
         disease = d;
+        if(!GoalManager.instance.colorCountDictionary.ContainsKey(d.color))
+        {
+            GoalManager.instance.colorCountDictionary.Add(d.color, 1);
+        }
+        else
+        {
+            GoalManager.instance.colorCountDictionary[d.color]++;
+        }
         sprite.color = d.color;
         Debug.Log("disease deathtime = " + d.deathTime);
         if (d.deathTime >= 0)
@@ -101,7 +110,10 @@ public class Agent : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if(_deathTime >= 0)
+        if (GoalManager.instance.won)
+            return;
+
+        if (_deathTime >= 0)
         {
             var percent = (Time.time-_startDeathTimer) / _deathTime;
             if(percent > 1)
@@ -120,5 +132,10 @@ public class Agent : MonoBehaviour {
     private void OnDestroy()
     {
         Debug.Log("DESTROYED");
+        GoalManager.instance.objectCount--;
+        if (disease != null && GoalManager.instance.colorCountDictionary.ContainsKey(disease.color))
+        {
+            GoalManager.instance.colorCountDictionary[disease.color]--;
+        }
     }
 }
