@@ -39,8 +39,6 @@ public class PercentColorGoal : Goal {
             per = numColor * 1.0f / numTotal * 1.0f;
         }
 
-        Debug.Log(per);
-
         if(isGreaterThan)
         {
             return per >= percentGoal;
