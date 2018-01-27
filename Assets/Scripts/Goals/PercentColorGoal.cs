@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PercentColorGoal : Goal {
     public Color disease;
@@ -19,9 +20,13 @@ public class PercentColorGoal : Goal {
 		
 	}
 
-    public override void AddUI(Transform t)
+    public override void AddUI(Transform t, int x)
     {
-        
+        var g = GameObject.Instantiate(goalUI);
+        g.transform.parent = t;
+        g.transform.localPosition = new Vector3(x, 0);
+        g.GetComponent<Image>().color = disease;
+        g.GetComponentInChildren<Text>().text = (isGreaterThan ? ">" : "<") + percentGoal;
     }
 
     public override bool IsComplete()
@@ -33,8 +38,6 @@ public class PercentColorGoal : Goal {
             int numTotal = GoalManager.instance.objectCount;
             per = numColor * 1.0f / numTotal * 1.0f;
         }
-
-        Debug.Log(per);
 
         if(isGreaterThan)
         {

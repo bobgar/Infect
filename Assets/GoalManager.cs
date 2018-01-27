@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GoalManager : MonoBehaviour {
     public bool won;
 
+    public Transform goalContainer;
     public Goal[] goals;
 
     public static GoalManager instance;
@@ -20,6 +22,12 @@ public class GoalManager : MonoBehaviour {
 
         Agent[] initialAgentArray = FindObjectsOfType<Agent>();
         GoalManager.instance.objectCount = initialAgentArray.Length;
+
+        for (int i = 0; i < goals.Length; i++)
+        {
+            Debug.Log("Ading UI for Goal");
+            goals[i].AddUI(goalContainer, i * 50 + 25);
+        }
 	}
 	
 	// Update is called once per frame
@@ -55,5 +63,10 @@ public class GoalManager : MonoBehaviour {
             rigidBodyArray[i].velocity = Vector3.zero;
             rigidBodyArray[i].angularVelocity = 0;
         }
+    }
+
+    public void ReturnToLevelSelect()
+    {
+        SceneManager.LoadScene(0);
     }
 }
