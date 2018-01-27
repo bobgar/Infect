@@ -31,7 +31,6 @@ class SpawnToolEditor : Editor
                     circleInstance.transform.position = position;
                     // Undo.RecordObject(circleInstance);
                 // }
-               Debug.Log("space pressed");
             }
  
         }
