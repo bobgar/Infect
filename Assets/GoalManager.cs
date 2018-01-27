@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GoalManager : MonoBehaviour {
     public bool won;
@@ -62,5 +63,10 @@ public class GoalManager : MonoBehaviour {
             rigidBodyArray[i].velocity = Vector3.zero;
             rigidBodyArray[i].angularVelocity = 0;
         }
+    }
+
+    public void ReturnToLevelSelect()
+    {
+        SceneManager.LoadScene(0);
     }
 }
