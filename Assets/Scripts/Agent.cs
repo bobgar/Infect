@@ -108,10 +108,10 @@ public class Agent : MonoBehaviour {
             {
                 GameObject.Destroy(this.gameObject);
             }
-            else
+            else if(percent > .5)
             {
                 Color c = sprite.color;
-                c.a = 1-percent;
+                c.a = 1-((percent - .5f)*2);
                 sprite.color = c;
             }
         }
