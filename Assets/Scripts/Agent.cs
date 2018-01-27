@@ -18,11 +18,6 @@ public class Agent : MonoBehaviour {
         Vector2 startingSpeed = new Vector2(Random.Range(-5f,5f),Random.Range(-5f,5f));
         rigidBody.velocity = startingSpeed;
     }
-	
-	// Update is called once per frame
-	void Update () {
-		    
-	}
 
     void OnCollisionEnter2D(Collision2D coll)
     {
@@ -76,21 +71,49 @@ public class Agent : MonoBehaviour {
         disease = d;
         sprite.color = d.color;
         Debug.Log("disease deathtime = " + d.deathTime);
-        if (d.deathTime != -1)
+        if (d.deathTime >= 0)
         {
-            StartCoroutine(DieInTime(d.deathTime));
+            DieInTime(d.deathTime);
+            //StartCoroutine(DieInTime(d.deathTime));
         }
     }
 
-    IEnumerator DieInTime(int deathTime)
+    private float _deathTime = -1;
+    private float _startDeathTimer = -1;
+
+    void DieInTime(int deathTime)
     {
-        while (true)
+        float deathTimeInSeconds = deathTime / 1000f;
+        _deathTime = deathTimeInSeconds;
+        _startDeathTimer = Time.time;
+        /*while (true)
         {
             float deathTimeInSeconds = deathTime / 1000f;
             Debug.Log("destroying in " + deathTimeInSeconds);
             yield return new WaitForSeconds(deathTimeInSeconds);
             Debug.Log("destroying now!");
             GameObject.Destroy(this.gameObject);
+        }*/
+    }
+
+
+
+    // Update is called once per frame
+    void Update()
+    {
+        if(_deathTime >= 0)
+        {
+            var percent = (Time.time-_startDeathTimer) / _deathTime;
+            if(percent > 1)
+            {
+                GameObject.Destroy(this.gameObject);
+            }
+            else
+            {
+                Color c = sprite.color;
+                c.a = 1-percent;
+                sprite.color = c;
+            }
         }
     }
 
