@@ -9,7 +9,7 @@ public class Agent : MonoBehaviour {
     public GameObject splitAgent;
     public int splitNum;
 
-    public Disease disease;
+    private Disease disease = null;
     //private bool _infected = false;
 
 	// Use this for initialization

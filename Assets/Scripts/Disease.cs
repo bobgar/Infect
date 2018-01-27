@@ -5,6 +5,7 @@ using UnityEngine;
 /// <summary>
 /// Stores information about the disease
 /// </summary>
+[System.Serializable]
 public class Disease {
     public Color color;
     public int deathTime = -1;

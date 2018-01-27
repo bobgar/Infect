@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour {
+
+    public DiseaseButton diseaseButtonPrefab;
+    public GameObject buttonBar;
+
+    public DiseaseButton.DiseaseButtonSpec[] diseases;
     
     public GameObject circle;
     public GameObject triangle;
@@ -10,9 +15,19 @@ public class Spawner : MonoBehaviour {
 	// Use this for initialization
     public int circleCount;
     public int triangleCount;
-    public int squareCount;    
+    public int squareCount;  
+    
 
 	void Start () {
+
+        for(int i = 0; i < diseases.Length; i++)
+        {
+            DiseaseButton db = GameObject.Instantiate(diseaseButtonPrefab);
+            db.transform.parent = buttonBar.transform;
+            db.uses = diseases[i].uses;
+            db.disease = diseases[i].disease;
+            db.transform.localPosition = new Vector3(i * 50 + 50, 0);
+        }
 
 
         for (int i = 0; i < circleCount; i++) {
@@ -27,7 +42,6 @@ public class Spawner : MonoBehaviour {
             Vector2 randomPositionOnScreen = Camera.main.ViewportToWorldPoint(new Vector2(Random.value, Random.value));
             Instantiate(square, randomPositionOnScreen, Quaternion.identity);
         }
-
 	}
 	
 	// Update is called once per frame
