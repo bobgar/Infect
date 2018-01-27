@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour {
-
+    
     public GameObject circle;
     public GameObject triangle;
     public GameObject square;
 	// Use this for initialization
     public int circleCount;
     public int triangleCount;
-    public int squareCount;
+    public int squareCount;    
 
 	void Start () {
+
+
         for (int i = 0; i < circleCount; i++) {
             Vector2 randomPositionOnScreen = Camera.main.ViewportToWorldPoint(new Vector2(Random.value, Random.value));
             Instantiate(circle, randomPositionOnScreen, Quaternion.identity);
@@ -25,6 +27,7 @@ public class Spawner : MonoBehaviour {
             Vector2 randomPositionOnScreen = Camera.main.ViewportToWorldPoint(new Vector2(Random.value, Random.value));
             Instantiate(square, randomPositionOnScreen, Quaternion.identity);
         }
+
 	}
 	
 	// Update is called once per frame

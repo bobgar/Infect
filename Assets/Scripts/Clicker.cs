@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Clicker : MonoBehaviour {
 
-  public int clicks = 1;
+    public Disease[] diseases = { new Disease(Color.red, 250), new Disease(Color.blue, 500) };
+    public int clicks = 0;
+    public int Maxclicks = 2;
 	// Use this for initialization
 	void Start () {
 		
@@ -12,21 +14,25 @@ public class Clicker : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () 
-  {
-  		if(clicks > 0 && Input.GetMouseButtonDown(0)) 
-      {
-          Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-          RaycastHit2D hit = Physics2D.Raycast (ray.origin, ray.direction, Mathf.Infinity);             
-          if(hit.collider !=null && hit.collider.tag == "Agent")
-              {
-                  Debug.Log ("infected"); 
-                  clicks--;
-                  hit.collider.gameObject.GetComponent<Agent>().Infect();
-              }
-              else
-              {
-                  Debug.Log ("No agent collider hit"); 
-              }
-     }
-  }
+    {
+  		if(clicks < Maxclicks && Input.GetMouseButtonDown(0)) 
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast (ray.origin, ray.direction, Mathf.Infinity);             
+            if(hit.collider !=null && hit.collider.tag == "Agent")
+            {
+                Agent a = hit.collider.gameObject.GetComponent<Agent>();
+                if (a && !a.IsInfected())
+                {
+                    Debug.Log("infected");
+                    a.Infect(diseases[clicks]);
+                    clicks++;
+                }
+            }
+            else
+            {
+                Debug.Log ("No agent collider hit"); 
+            }
+        }
+    }
 }

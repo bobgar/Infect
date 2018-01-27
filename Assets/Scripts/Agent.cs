@@ -9,7 +9,8 @@ public class Agent : MonoBehaviour {
     public GameObject splitAgent;
     public int splitNum;
 
-    private bool _infected = false;
+    public Disease disease;
+    //private bool _infected = false;
 
 	// Use this for initialization
 	void Start () {
@@ -25,17 +26,16 @@ public class Agent : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        Debug.Log("collision!");
         if (IsInfected())
         {
             //Collider2D c = coll.otherCollider;
             Agent a = coll.gameObject.GetComponent<Agent>();
 
-            Debug.Log("object " + coll.gameObject.name);
+            //Debug.Log("object " + coll.gameObject.name);
             if (a && !a.IsInfected())
             {
-                Debug.Log("Infecting!");
-                a.Infect();
+                //Debug.Log("Infecting!");
+                a.Infect(this.disease);
                 a.Split();
                 Split();
 
@@ -46,33 +46,56 @@ public class Agent : MonoBehaviour {
 
     public bool IsInfected()
     {
-        return _infected;
+        return disease != null;
     }
 
     public void Split()
     {
-        Debug.Log("splitAgent: " + splitAgent);
+        //Debug.Log("splitAgent: " + splitAgent);
         if (splitAgent != null)
         {
-            Debug.Log("splitNum: " + splitNum);
+            //Debug.Log("splitNum: " + splitNum);
             for (int i = 0; i < splitNum; i++)
             {
-                Debug.Log("dividing!");
+                //Debug.Log("dividing!");
                 GameObject splitObj = GameObject.Instantiate(splitAgent);
                 splitObj.gameObject.transform.position = this.gameObject.transform.position + Random.onUnitSphere;
                 Agent a = splitObj.GetComponent<Agent>();
                 if(a && this.IsInfected())
                 {
-                    a.Infect();
+                    a.Infect(this.disease);
                 }
             }
         }
         GameObject.Destroy(this.gameObject);
     }
 
-    public void Infect()
+    public void Infect(Disease d)
     {
-        _infected = true;
-        sprite.color = Color.red;
+        //_infected = true;
+        disease = d;
+        sprite.color = d.color;
+        Debug.Log("disease deathtime = " + d.deathTime);
+        if (d.deathTime != -1)
+        {
+            StartCoroutine(DieInTime(d.deathTime));
+        }
+    }
+
+    IEnumerator DieInTime(int deathTime)
+    {
+        while (true)
+        {
+            float deathTimeInSeconds = deathTime / 1000f;
+            Debug.Log("destroying in " + deathTimeInSeconds);
+            yield return new WaitForSeconds(deathTimeInSeconds);
+            Debug.Log("destroying now!");
+            GameObject.Destroy(this.gameObject);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        Debug.Log("DESTROYED");
     }
 }

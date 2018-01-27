@@ -267,7 +267,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09f427f8762854eb68f8f798c741ae92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clicks: 1
+  clicks: 0
+  Maxclicks: 2
 --- !u!4 &448434688
 Transform:
   m_ObjectHideFlags: 0
