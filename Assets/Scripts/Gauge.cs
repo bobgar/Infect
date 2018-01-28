@@ -24,6 +24,11 @@ public class Gauge : MonoBehaviour {
         SetPercent(_p);*/
 	}
 
+    public void SetColor(Color c)
+    {
+        foreground.color = c;
+    }
+
     public void SetText(string t)
     {
         text.text = t;

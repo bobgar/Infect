@@ -43,6 +43,7 @@ public class PercentColorGoal : Goal {
         gauge.SetPercent(0f);
         g.transform.parent = t;
         g.transform.localPosition = new Vector3(x, y);
+        gauge.SetColor(disease);
         //g.transform.localPosition = new Vector3(x, 0);
         //g.GetComponent<Image>().color = disease;
         //g.GetComponentInChildren<Text>().text = (isGreaterThan ? ">" : "<") + percentGoal;
