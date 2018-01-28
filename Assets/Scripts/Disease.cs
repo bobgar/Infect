@@ -8,6 +8,8 @@ using UnityEngine;
 [System.Serializable]
 public class Disease {
     public Color color;
+    public Color boarderColor;
+    public Color glowColor;
     public int deathTime = -1;
 
     /*public Disease(Color c)
