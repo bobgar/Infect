@@ -12,6 +12,7 @@ public class DiseaseButton : MonoBehaviour {
         public int uses;
     }
 
+    public Sprite[] DiseaseImages;
  
     public Button button;
     public NumberArray numberArray;
