@@ -1174,7 +1174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectGoal: 0
   lessThanOrEqualTo: 1
-  goalUI: {fileID: 1317209849625284, guid: aef9df242c3842f4ab804b9e9e0e7c0a, type: 2}
+  goalUI: {fileID: 1870887358961662, guid: 473b49eeff7265c43a432fec8d212933, type: 2}
 --- !u!1001 &1575278989
 Prefab:
   m_ObjectHideFlags: 0
