@@ -99,7 +99,7 @@ public class Agent : MonoBehaviour {
         sprite.color = d.color;
         border.color = d.boarderColor;
         glow.color = d.glowColor;
-        Debug.Log("disease deathtime = " + d.deathTime);
+        //Debug.Log("disease deathtime = " + d.deathTime);
         if (d.deathTime >= 0)
         {
             DieInTime(d.deathTime);

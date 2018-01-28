@@ -8,24 +8,40 @@ public class PercentColorGoal : Goal {
     public float percentGoal;
     public bool isGreaterThan;
     public GameObject goalUI;
-    
-	// Use this for initialization
-	void Start () {
+    private Gauge gauge;
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        gauge.SetText("");
+        gauge.SetPercent(1f);
 
-    public override void AddUI(Transform t, int x)
+        if (GoalManager.instance.colorCountDictionary.ContainsKey(disease))
+        {
+            int numColor = GoalManager.instance.colorCountDictionary[disease];
+            int numTotal = GoalManager.instance.objectCount;
+            float per = numColor * 1.0f / numTotal * 1.0f;
+            Debug.Log("per = " + per);
+            gauge.SetPercent(per - .05f);
+        }
+    }
+
+    public override void AddUI(Transform t, float x, float y)
     {
         var g = GameObject.Instantiate(goalUI);
+        gauge = g.GetComponent<Gauge>();
+        //gauge.SetText(GoalManager.instance.objectCount + " goal " + objectGoal);
+        gauge.SetText("");
+        gauge.SetPercent(0f);
         g.transform.parent = t;
-        g.transform.localPosition = new Vector3(x, 0);
-        g.GetComponent<Image>().color = disease;
-        g.GetComponentInChildren<Text>().text = (isGreaterThan ? ">" : "<") + percentGoal;
+        g.transform.localPosition = new Vector3(x, y);
+        //g.transform.localPosition = new Vector3(x, 0);
+        //g.GetComponent<Image>().color = disease;
+        //g.GetComponentInChildren<Text>().text = (isGreaterThan ? ">" : "<") + percentGoal;
     }
 
     public override bool IsComplete()

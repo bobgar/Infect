@@ -5,13 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class GoalManager : MonoBehaviour {
     public bool won;
-
+    
     public Transform goalContainer;
     public Goal[] goals;
 
     public static GoalManager instance;
 
     public int objectCount;
+    public int initalObjectCount;
     public Dictionary<Color, int> colorCountDictionary = new Dictionary<Color, int>();
 
     public GameObject winUI;
@@ -22,12 +23,13 @@ public class GoalManager : MonoBehaviour {
         instance = this;
 
         Agent[] initialAgentArray = FindObjectsOfType<Agent>();
-        GoalManager.instance.objectCount = initialAgentArray.Length;
+        objectCount = initialAgentArray.Length;
+        initalObjectCount = initialAgentArray.Length;
 
         for (int i = 0; i < goals.Length; i++)
         {
             Debug.Log("Ading UI for Goal");
-            goals[i].AddUI(goalContainer, i * 50 + 25);
+            goals[i].AddUI(goalContainer, 350, i * 50 + 25);
         }
 	}
 	

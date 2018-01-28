@@ -29,7 +29,7 @@ public class TimeGoal : Goal
         }
     }
 
-    public override void AddUI(Transform t, int x)
+    public override void AddUI(Transform t, float x, float y)
     {
         var g = GameObject.Instantiate(goalUI);
         g.transform.parent = t;
