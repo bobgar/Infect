@@ -9,14 +9,27 @@ public class Agent : MonoBehaviour {
     public GameObject splitAgent;
     public int splitNum;
 
+    public Vector2 velocity;
+
+    public bool isStationary;
+
     private Disease disease = null;
     //private bool _infected = false;
 
 	// Use this for initialization
 	void Start () {
         
-        Vector2 startingSpeed = new Vector2(Random.Range(-5f,5f),Random.Range(-5f,5f));
-        rigidBody.velocity = startingSpeed;
+        if(!isStationary && velocity.magnitude == 0.0f)
+        {
+            Vector2 startingSpeed = new Vector2(Random.Range(-5f,5f),Random.Range(-5f,5f));
+            rigidBody.velocity = startingSpeed;
+
+        } else if(isStationary) {
+            rigidBody.velocity = new Vector2(0,0);
+        } else {
+            rigidBody.velocity = velocity;
+        }
+        
     }
 
     void OnCollisionEnter2D(Collision2D coll)
