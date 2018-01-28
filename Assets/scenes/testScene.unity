@@ -503,17 +503,6 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 448434690}
-    - target: {fileID: 224496271324844486, guid: e365d132fc4a24e4aab0c8a6e178489e,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -5.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 114733210427452244, guid: e365d132fc4a24e4aab0c8a6e178489e,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 2e37463d88042054c8676c9687a2ee3a,
-        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e365d132fc4a24e4aab0c8a6e178489e, type: 2}
   m_IsPrefabParent: 0
