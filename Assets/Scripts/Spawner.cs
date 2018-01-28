@@ -6,6 +6,7 @@ public class Spawner : MonoBehaviour {
 
     public DiseaseButton diseaseButtonPrefab;
     public GameObject buttonBar;
+    public DiseaseButton[] diseaseButtons;
 
     public DiseaseButton.DiseaseButtonSpec[] diseases;
     
@@ -20,9 +21,11 @@ public class Spawner : MonoBehaviour {
 
 	void Start () {
 
+        diseaseButtons = new DiseaseButton[diseases.Length];
         for(int i = 0; i < diseases.Length; i++)
         {
             DiseaseButton db = GameObject.Instantiate(diseaseButtonPrefab);
+            diseaseButtons[i] = db;
             db.transform.parent = buttonBar.transform;
             db.uses = diseases[i].uses;
             db.disease = diseases[i].disease;

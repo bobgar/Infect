@@ -7,7 +7,6 @@ public class PercentColorGoal : Goal {
     public Color disease;
     public float percentGoal;
     public bool isGreaterThan;
-
     public GameObject goalUI;
     
 	// Use this for initialization
@@ -39,7 +38,6 @@ public class PercentColorGoal : Goal {
             int numColor = GoalManager.instance.colorCountDictionary[disease];
             int numTotal = GoalManager.instance.objectCount;
             per = numColor * 1.0f / numTotal * 1.0f;
-            Debug.Log("per: " + per);
         }
 
         if(isGreaterThan)
