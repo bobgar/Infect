@@ -212,13 +212,14 @@ MonoBehaviour:
   diseaseButtonPrefab: {fileID: 114642341720429900, guid: 2f087d6593bcd8642b8f1699bd9a5708,
     type: 2}
   buttonBar: {fileID: 1679010391}
+  diseaseButtons: []
   diseases:
   - disease:
       color: {r: 1, g: 0, b: 0, a: 1}
       boarderColor: {r: 0.53676474, g: 1, b: 0.71247464, a: 1}
       glowColor: {r: 0.94482756, g: 0, b: 1, a: 1}
       deathTime: 3000
-    uses: 3
+    uses: 1
   - disease:
       color: {r: 0, g: 1, b: 0, a: 1}
       boarderColor: {r: 0, g: 0, b: 0, a: 0}
@@ -254,6 +255,7 @@ MonoBehaviour:
   - {fileID: 1532939149}
   objectCount: 0
   winUI: {fileID: 1412335080}
+  loseUI: {fileID: 2047717952}
 --- !u!114 &448434691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,6 +490,16 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114686708464591650, guid: e365d132fc4a24e4aab0c8a6e178489e,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 448434690}
+    - target: {fileID: 114829211664277218, guid: e365d132fc4a24e4aab0c8a6e178489e,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 448434690}
     - target: {fileID: 114797837074905042, guid: e365d132fc4a24e4aab0c8a6e178489e,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1058,3 +1070,8 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 63a5c1dcb7db57a46a9813ccc8d51e1c, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2047717952 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1102978155326578, guid: e365d132fc4a24e4aab0c8a6e178489e,
+    type: 2}
+  m_PrefabInternal: {fileID: 856506918}
