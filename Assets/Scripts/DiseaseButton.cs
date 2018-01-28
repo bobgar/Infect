@@ -14,6 +14,7 @@ public class DiseaseButton : MonoBehaviour {
 
  
     public Button button;
+    public NumberArray numberArray;
 
     private int _uses;
     private Disease _disease;    
@@ -23,7 +24,8 @@ public class DiseaseButton : MonoBehaviour {
         get { return _uses; }
         set {
             _uses = value;
-            button.GetComponentInChildren<Text>().text = "" + uses;
+            numberArray.SetNumber(uses);
+            //button.GetComponentInChildren<Text>().text = "" + uses;
         }
     }
 
@@ -64,6 +66,7 @@ public class DiseaseButton : MonoBehaviour {
         {
             this.button.interactable = false;
         }
-        button.GetComponentInChildren<Text>().text = ""+uses;// "uses: " + uses + "\ntime: " + (disease.deathTime / 1000f);        
+        numberArray.SetNumber(uses);
+        //button.GetComponentInChildren<Text>().text = ""+uses;// "uses: " + uses + "\ntime: " + (disease.deathTime / 1000f);        
     }
 }

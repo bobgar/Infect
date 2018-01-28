@@ -396,13 +396,14 @@ MonoBehaviour:
   diseaseButtonPrefab: {fileID: 114642341720429900, guid: 2f087d6593bcd8642b8f1699bd9a5708,
     type: 2}
   buttonBar: {fileID: 1679010391}
+  diseaseButtons: []
   diseases:
   - disease:
       color: {r: 1, g: 0, b: 0, a: 1}
       boarderColor: {r: 0.53676474, g: 1, b: 0.71247464, a: 1}
       glowColor: {r: 0.94482756, g: 0, b: 1, a: 1}
       deathTime: 3000
-    uses: 5
+    uses: 3
   - disease:
       color: {r: 0, g: 1, b: 0, a: 1}
       boarderColor: {r: 0, g: 0, b: 0, a: 0}
@@ -438,6 +439,7 @@ MonoBehaviour:
   - {fileID: 779752643}
   objectCount: 0
   winUI: {fileID: 1412335080}
+  loseUI: {fileID: 0}
 --- !u!114 &448434691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1274,6 +1276,11 @@ Prefab:
     - target: {fileID: 4832746821056196, guid: 4c065a91b29188d4295163163233b95b, type: 2}
       propertyPath: m_RootOrder
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 82408215190536796, guid: 4c065a91b29188d4295163163233b95b,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.272
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4c065a91b29188d4295163163233b95b, type: 2}
