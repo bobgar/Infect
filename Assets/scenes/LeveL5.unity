@@ -1584,7 +1584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169d5b21114966044962638532238d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disease: {r: 1, g: 1, b: 0, a: 1}
+  disease: {r: 1, g: 0, b: 0, a: 1}
   percentGoal: 0.3
   isGreaterThan: 1
   goalUI: {fileID: 1870887358961662, guid: 473b49eeff7265c43a432fec8d212933, type: 2}
