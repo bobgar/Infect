@@ -13,6 +13,7 @@ public class DiseaseButton : MonoBehaviour {
     }
 
     public Sprite[] DiseaseImages;
+    private Color[] _colorToImageArray = {Color.green, Color.yellow, Color.red };
  
     public Button button;
     public NumberArray numberArray;
@@ -35,15 +36,16 @@ public class DiseaseButton : MonoBehaviour {
         get { return _disease; }
         set {
             _disease = value;
-            ColorBlock colors = button.colors;
+            /*ColorBlock colors = button.colors;
             colors.normalColor = disease.color;
-            button.colors = colors;
+            button.colors = colors;*/
+            button.image.sprite = DiseaseImages[0];
         }
     }
 
 	// Use this for initialization
-	void Start () {
-	}
+	void Start () {        
+    }
 	
 	// Update is called once per frame
 	void Update () {
