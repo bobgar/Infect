@@ -673,10 +673,16 @@ MonoBehaviour:
   diseaseButtons: []
   diseases:
   - disease:
-      color: {r: 1, g: 0, b: 0, a: 1}
+      color: {r: 0, g: 1, b: 0, a: 1}
       boarderColor: {r: 0, g: 0, b: 0, a: 0}
       glowColor: {r: 0, g: 0, b: 0, a: 0}
       deathTime: 9000
+    uses: 1
+  - disease:
+      color: {r: 1, g: 1, b: 0, a: 1}
+      boarderColor: {r: 0, g: 0, b: 0, a: 0}
+      glowColor: {r: 0, g: 0, b: 0, a: 0}
+      deathTime: 4000
     uses: 1
   - disease:
       color: {r: 0, g: 1, b: 0, a: 1}
@@ -702,6 +708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   won: 0
+  lost: 0
   goalContainer: {fileID: 1420312444}
   goals:
   - {fileID: 1566817300}
