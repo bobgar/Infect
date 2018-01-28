@@ -24,7 +24,7 @@ public class Agent : MonoBehaviour {
         
         if(!isStationary && velocity.magnitude == 0.0f)
         {
-            Vector2 startingSpeed = new Vector2(Random.Range(-5f,5f),Random.Range(-5f,5f));
+            Vector2 startingSpeed = new Vector2(Random.Range(-2f,2f),Random.Range(-2f,2f));
             rigidBody.velocity = startingSpeed;
 
         } else if(isStationary) {
