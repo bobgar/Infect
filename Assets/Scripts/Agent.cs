@@ -162,5 +162,8 @@ public class Agent : MonoBehaviour {
         {
             GoalManager.instance.colorCountDictionary[disease.color]--;
         }
+        if(GoalManager.instance.colorCountDictionary[disease.color] == 0) {
+            GoalManager.instance.CheckLose();
+        }
     }
 }
