@@ -154,6 +154,9 @@ public class Agent : MonoBehaviour {
             rigidBody.AddForce(randomSpeed);
         }
     }
+    void OnBecameInvisible() {
+        enabled = false;
+    }
 
     private void OnDestroy()
     {
@@ -161,9 +164,9 @@ public class Agent : MonoBehaviour {
         if (disease != null && GoalManager.instance.colorCountDictionary.ContainsKey(disease.color))
         {
             GoalManager.instance.colorCountDictionary[disease.color]--;
-        }
-        if(GoalManager.instance.colorCountDictionary[disease.color] == 0) {
-            GoalManager.instance.CheckLose();
+            if(GoalManager.instance.colorCountDictionary[disease.color] == 0) {
+                GoalManager.instance.CheckLose();
+            }
         }
     }
 }
