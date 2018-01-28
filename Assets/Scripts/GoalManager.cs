@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GoalManager : MonoBehaviour {
     public bool won;
-    
+    public bool lost;
+
     public Transform goalContainer;
     public Goal[] goals;
 
@@ -61,9 +62,10 @@ public class GoalManager : MonoBehaviour {
     }
     void Lose()
     {
-        Debug.Log("*********** WIN **************");
-        won = true;        
-        loseUI.SetActive(true);
+        if(!won) {
+            loseUI.SetActive(true);
+            lost = true;
+        }
     }
     public void CheckLose()
     {
@@ -81,8 +83,6 @@ public class GoalManager : MonoBehaviour {
 
             for(int i = 0; i < this.GetComponent<Spawner>().diseaseButtons.Length; i++)
             {
-                Debug.Log(this.GetComponent<Spawner>().diseaseButtons.Length);
-                Debug.Log(this.GetComponent<Spawner>().diseaseButtons[i]);
                 if(this.GetComponent<Spawner>().diseaseButtons[i].canUse())
                 {
                     count++;
@@ -90,9 +90,17 @@ public class GoalManager : MonoBehaviour {
             }   
         }
         if(count == 0){
-            this.Lose();
+            StartCoroutine(waitForWin());
         }
 
+    }
+    private IEnumerator waitForWin()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(0.5f);
+            Lose();
+        }
     }
 
     public void ReturnToLevelSelect()
