@@ -148,6 +148,12 @@ public class Agent : MonoBehaviour {
             }
         }
     }
+    void FixedUpdate() {
+        if(!isStationary && velocity.magnitude < 0.5f) {
+            Vector2 randomSpeed = new Vector2(Random.Range(-2f,2f),Random.Range(-2f,2f));
+            rigidBody.AddForce(randomSpeed);
+        }
+    }
 
     private void OnDestroy()
     {
