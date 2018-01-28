@@ -800,25 +800,14 @@ MonoBehaviour:
   diseaseButtonPrefab: {fileID: 114642341720429900, guid: 2f087d6593bcd8642b8f1699bd9a5708,
     type: 2}
   buttonBar: {fileID: 1679010391}
+  diseaseButtons: []
   diseases:
   - disease:
-      color: {r: 1, g: 0, b: 0, a: 1}
+      color: {r: 0, g: 1, b: 0, a: 1}
       boarderColor: {r: 0.53676474, g: 1, b: 0.71247464, a: 1}
       glowColor: {r: 0.94482756, g: 0, b: 1, a: 1}
       deathTime: 3000
     uses: 3
-  - disease:
-      color: {r: 0, g: 1, b: 0, a: 1}
-      boarderColor: {r: 0, g: 0, b: 0, a: 0}
-      glowColor: {r: 0, g: 0, b: 0, a: 0}
-      deathTime: 1000
-    uses: 0
-  - disease:
-      color: {r: 0.94482756, g: 1, b: 0, a: 1}
-      boarderColor: {r: 0, g: 0, b: 0, a: 0}
-      glowColor: {r: 0, g: 0, b: 0, a: 0}
-      deathTime: -1
-    uses: 0
   circle: {fileID: 1247074035121672, guid: 3c72595fc7c2e4a13b80482fafe5361a, type: 2}
   triangle: {fileID: 1288194747182986, guid: 70bf045be3680ec4097c8829c02ff7fb, type: 2}
   square: {fileID: 1339539506138172, guid: 903ebc0c44bd73248b99412259fbd6a6, type: 2}
@@ -842,6 +831,7 @@ MonoBehaviour:
   - {fileID: 1532939149}
   objectCount: 0
   winUI: {fileID: 1412335080}
+  loseUI: {fileID: 0}
 --- !u!114 &448434691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2600,7 +2590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169d5b21114966044962638532238d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disease: {r: 1, g: 0, b: 0, a: 1}
+  disease: {r: 0, g: 1, b: 0, a: 1}
   percentGoal: 0.9
   isGreaterThan: 1
   goalUI: {fileID: 1317209849625284, guid: aef9df242c3842f4ab804b9e9e0e7c0a, type: 2}
