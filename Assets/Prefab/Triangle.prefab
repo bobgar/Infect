@@ -84,7 +84,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1288194747182986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4452658417496692}
@@ -100,7 +100,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1825162102629828}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 0.747, z: 0}
+  m_LocalPosition: {x: -0.02, y: 0, z: 0}
   m_LocalScale: {x: 0.079576, y: 0.079576, z: 0.079576}
   m_Children: []
   m_Father: {fileID: 4004404700996626}
@@ -113,7 +113,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1611007460559368}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 0.747, z: 0}
+  m_LocalPosition: {x: -0.02, y: 0, z: 0}
   m_LocalScale: {x: 0.079576, y: 0.079576, z: 0.079576}
   m_Children: []
   m_Father: {fileID: 4004404700996626}
@@ -126,8 +126,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1919863719838382}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 0.747, z: 0}
-  m_LocalScale: {x: 0.07957567, y: 0.07957567, z: 0.07957567}
+  m_LocalPosition: {x: -0.02, y: 0, z: 0}
+  m_LocalScale: {x: 0.07957567, y: 0.07957567, z: 0}
   m_Children: []
   m_Father: {fileID: 4004404700996626}
   m_RootOrder: 0
@@ -150,7 +150,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!60 &60354365313769176
 PolygonCollider2D:
@@ -176,9 +176,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.30427408, y: 0.73810154}
-      - {x: -0.3432377, y: 1.0734408}
-      - {x: -0.33812225, y: 0.4138583}
+    - - {x: 0.3089574, y: -0.0065522194}
+      - {x: -0.34323764, y: 0.32410407}
+      - {x: -0.3428055, y: -0.33079553}
 --- !u!114 &114573605555515398
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -196,6 +196,8 @@ MonoBehaviour:
   rigidBody: {fileID: 50845529006034990}
   splitAgent: {fileID: 1247074035121672, guid: 3c72595fc7c2e4a13b80482fafe5361a, type: 2}
   splitNum: 2
+  velocity: {x: 0, y: 0}
+  isStationary: 0
 --- !u!212 &212027580123106740
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -229,7 +231,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 68ef5bf705ee0764ebeae81a874b2a6f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -317,7 +319,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c8819cbcaa0c859488210b896f2ddae2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

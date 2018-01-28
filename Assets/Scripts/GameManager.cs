@@ -17,8 +17,8 @@ using UnityEngine.SceneManagement;
             {
                 scores[i] = PlayerPrefs.GetInt(levels[i]);
             }
-
-            if (instance == null)
+            instance = this;
+            /*if (instance == null)
             {
                 //if not, set instance to this
                 instance = this;
@@ -27,10 +27,10 @@ using UnityEngine.SceneManagement;
             else if (instance != this)
             {
                 //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
-                Destroy(gameObject);
+                Destroy(gameObject);            
             } 
             //Sets this to not be destroyed when reloading scene
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);*/
         }
         //Update is called every frame.
         void Update()

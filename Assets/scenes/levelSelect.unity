@@ -269,7 +269,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -595,11 +595,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114319877135436678, guid: ac72644cd8b51401fa7d0c27494c8e85,
-        type: 2}
-      propertyPath: levels.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4021385856429412, guid: ac72644cd8b51401fa7d0c27494c8e85, type: 2}
       propertyPath: m_LocalPosition.x
       value: 614.8703
@@ -631,16 +626,6 @@ Prefab:
     - target: {fileID: 4021385856429412, guid: ac72644cd8b51401fa7d0c27494c8e85, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114319877135436678, guid: ac72644cd8b51401fa7d0c27494c8e85,
-        type: 2}
-      propertyPath: levels.Array.data[0]
-      value: testScene
-      objectReference: {fileID: 0}
-    - target: {fileID: 114319877135436678, guid: ac72644cd8b51401fa7d0c27494c8e85,
-        type: 2}
-      propertyPath: levels.Array.data[1]
-      value: level2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac72644cd8b51401fa7d0c27494c8e85, type: 2}

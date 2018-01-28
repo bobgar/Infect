@@ -20,13 +20,21 @@ public class SFXGloopAudio : MonoBehaviour {
 		
 	}
 
+    float lastGloop;
+    float minBetweenGloops = .05f;
     public void PlayGloop()
     {
+        if(Time.time - lastGloop < minBetweenGloops)
+        {
+            return;
+        }
+
         gloopCount++;
-        if (gloopCount > gloopSounds.Count)
+        if (gloopCount >= gloopSounds.Count)
             gloopCount = 0;
 
         audioSource.clip = gloopSounds[gloopCount];
         audioSource.Play();
+        lastGloop = Time.time;
     }
 }
