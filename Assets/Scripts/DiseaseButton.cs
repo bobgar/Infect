@@ -39,12 +39,12 @@ public class DiseaseButton : MonoBehaviour {
             /*ColorBlock colors = button.colors;
             colors.normalColor = disease.color;
             button.colors = colors;*/
-            int i = 0;
-            while(i < _colorToImageArray.Length)
+            int i = -1;
+            while(i < _colorToImageArray.Length-1)
             {
+                i++;
                 if (_colorToImageArray[i] == _disease.color)
                     break;
-                i++;
             }
             button.image.sprite = DiseaseImages[i];
         }
