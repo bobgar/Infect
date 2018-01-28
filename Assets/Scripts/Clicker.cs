@@ -40,8 +40,9 @@ public class Clicker : MonoBehaviour {
                 Debug.Log(a);
                 if (a && !a.IsInfected())
                 {
-                    if(SFXGloopAudio.instance != null)
-                        SFXGloopAudio.instance.PlayGloop();
+                    if (SFXGloopAudio.instance != null)
+                        SFXGloopAudio.instance.PlayClick();
+                        //SFXGloopAudio.instance.PlayGloop();
                     Debug.Log("infected");
                     //a.Infect(diseases[clicks]);
                     a.Infect(curDiseaseButton.disease);

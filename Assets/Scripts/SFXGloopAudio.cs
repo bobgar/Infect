@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SFXGloopAudio : MonoBehaviour {
     public AudioSource audioSource;
+    public AudioSource clickAudioSource;
     public List<AudioClip> gloopSounds;
 
     private int gloopCount=0;
@@ -36,5 +37,10 @@ public class SFXGloopAudio : MonoBehaviour {
         audioSource.clip = gloopSounds[gloopCount];
         audioSource.Play();
         lastGloop = Time.time;
+    }
+
+    public void PlayClick()
+    {
+        clickAudioSource.Play();
     }
 }
