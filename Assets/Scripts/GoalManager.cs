@@ -30,7 +30,7 @@ public class GoalManager : MonoBehaviour {
         for (int i = 0; i < goals.Length; i++)
         {
             Debug.Log("Ading UI for Goal");
-            goals[i].AddUI(goalContainer, 350, i * 50 + 25);
+            goals[i].AddUI(goalContainer, 350, i * 70 + 25);
         }
 	}
 	
