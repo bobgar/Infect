@@ -197,6 +197,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3c72595fc7c2e4a13b80482fafe5361a, type: 2}
   m_IsPrefabParent: 0
+--- !u!224 &137911800 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224863351218229656, guid: e365d132fc4a24e4aab0c8a6e178489e,
+    type: 2}
+  m_PrefabInternal: {fileID: 856506918}
 --- !u!1001 &147144788
 Prefab:
   m_ObjectHideFlags: 0
@@ -826,10 +831,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   won: 0
-  goalContainer: {fileID: 1420312444}
+  goalContainer: {fileID: 137911800}
   goals:
   - {fileID: 1532939149}
   objectCount: 0
+  initalObjectCount: 0
   winUI: {fileID: 1412335080}
   loseUI: {fileID: 0}
 --- !u!114 &448434691
@@ -1384,16 +1390,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 223840902333252228, guid: e365d132fc4a24e4aab0c8a6e178489e,
-        type: 2}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1470816975}
-    - target: {fileID: 114250803545824050, guid: e365d132fc4a24e4aab0c8a6e178489e,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 448434690}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e365d132fc4a24e4aab0c8a6e178489e, type: 2}
   m_IsPrefabParent: 0
@@ -2380,11 +2376,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1955970318990288, guid: e365d132fc4a24e4aab0c8a6e178489e,
     type: 2}
   m_PrefabInternal: {fileID: 856506918}
---- !u!224 &1420312444 stripped
-RectTransform:
-  m_PrefabParentObject: {fileID: 224407224546701898, guid: e365d132fc4a24e4aab0c8a6e178489e,
-    type: 2}
-  m_PrefabInternal: {fileID: 856506918}
 --- !u!1001 &1453775371
 Prefab:
   m_ObjectHideFlags: 0
@@ -2593,7 +2584,7 @@ MonoBehaviour:
   disease: {r: 0, g: 1, b: 0, a: 1}
   percentGoal: 0.9
   isGreaterThan: 1
-  goalUI: {fileID: 1317209849625284, guid: aef9df242c3842f4ab804b9e9e0e7c0a, type: 2}
+  goalUI: {fileID: 1870887358961662, guid: 473b49eeff7265c43a432fec8d212933, type: 2}
 --- !u!1001 &1572634401
 Prefab:
   m_ObjectHideFlags: 0

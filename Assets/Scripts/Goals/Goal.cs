@@ -16,7 +16,7 @@ public class Goal : MonoBehaviour {
 		
 	}
 
-    public virtual void AddUI(Transform t, int x)
+    public virtual void AddUI(Transform t, float x, float y)
     {
 
     }
