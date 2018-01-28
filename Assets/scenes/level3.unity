@@ -276,6 +276,17 @@ Prefab:
       propertyPath: m_Name
       value: tenticleWall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 212840087400834238, guid: c6bc787a602ef0b48b1853d141b71279,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7b0a55114a804a6489beed1cfb87b536,
+        type: 3}
+    - target: {fileID: 212840087400834238, guid: c6bc787a602ef0b48b1853d141b71279,
+        type: 2}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c6bc787a602ef0b48b1853d141b71279, type: 2}
   m_IsPrefabParent: 0
@@ -4428,7 +4439,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4495855713485594, guid: c6bc787a602ef0b48b1853d141b71279, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -6.66
+      value: -7.23
       objectReference: {fileID: 0}
     - target: {fileID: 4495855713485594, guid: c6bc787a602ef0b48b1853d141b71279, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4453,6 +4464,17 @@ Prefab:
     - target: {fileID: 4495855713485594, guid: c6bc787a602ef0b48b1853d141b71279, type: 2}
       propertyPath: m_RootOrder
       value: 66
+      objectReference: {fileID: 0}
+    - target: {fileID: 212840087400834238, guid: c6bc787a602ef0b48b1853d141b71279,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7b0a55114a804a6489beed1cfb87b536,
+        type: 3}
+    - target: {fileID: 212840087400834238, guid: c6bc787a602ef0b48b1853d141b71279,
+        type: 2}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c6bc787a602ef0b48b1853d141b71279, type: 2}
