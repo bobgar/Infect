@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Agent : MonoBehaviour {
     public SpriteRenderer sprite;
+    public SpriteRenderer border;
+    public SpriteRenderer glow;
+
     public Rigidbody2D rigidBody;
 
     public GameObject splitAgent;
@@ -79,6 +82,8 @@ public class Agent : MonoBehaviour {
             GoalManager.instance.colorCountDictionary[d.color]++;
         }
         sprite.color = d.color;
+        border.color = d.boarderColor;
+        glow.color = d.glowColor;
         Debug.Log("disease deathtime = " + d.deathTime);
         if (d.deathTime >= 0)
         {
