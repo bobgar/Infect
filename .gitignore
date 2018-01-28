@@ -33,3 +33,5 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Assets/Art/UI/Num00.png.meta
+*.meta
