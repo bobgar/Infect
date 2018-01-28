@@ -28,6 +28,10 @@ public class PercentColorGoal : Goal {
             Debug.Log("per = " + per);
             gauge.SetPercent(per - .05f);
         }
+        else
+        {
+            gauge.SetPercent(0);
+        }
     }
 
     public override void AddUI(Transform t, float x, float y)
