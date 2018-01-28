@@ -32,7 +32,8 @@ public class Agent : MonoBehaviour {
             //Debug.Log("object " + coll.gameObject.name);
             if (a && !a.IsInfected())
             {
-                SFXGloopAudio.instance.PlayGloop();
+                if (SFXGloopAudio.instance != null)
+                    SFXGloopAudio.instance.PlayGloop();
                 //Debug.Log("Infecting!");
                 a.Infect(this.disease);
                 a.Split();
